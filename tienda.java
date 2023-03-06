@@ -25,11 +25,13 @@ public class tienda {
     
         String resultado = "";
         for (String categoria : categoriasOrdenadas) {
-            resultado += "\n\nCategoría: " + categoria + "\n";
+            resultado += "***************************************************************************";
+            resultado += "\n\t\tCategoría: " + categoria + "\n";
+            resultado += "***************************************************************************\n";
             List<Producto> productosDeCategoria = productosPorCategoria.get(categoria);
             productosDeCategoria.sort(Comparator.comparing(Producto::getNombre));
             for (Producto producto : productosDeCategoria) {
-                resultado += "Categoría: " + producto.getCateogria() + ", Producto: " + producto.getNombre() + ", Cantidad en lista: " + producto.getExistence() + "\n";
+                resultado += "Categoría: " + producto.getCateogria() + "; Producto: " + producto.getNombre() + "; Cantidad: " + producto.getExistence() + "\n---------------------------------------------------------------------------------\n";
             }
         }
         return resultado;
@@ -49,7 +51,7 @@ public class tienda {
             String categoria = producto.getValue().getCateogria();
             String nombre = producto.getValue().getNombre();
             int existencias = producto.getValue().getExistence();
-            sb.append("Indice: ").append(indice).append(", Categoría: ").append(categoria).append(", Producto: ").append(nombre).append(", Cantidad en lista: ").append(existencias).append("\n");
+            sb.append("Producto número: ").append(indice).append("; Categoría: ").append(categoria).append("; Producto: ").append(nombre).append("; Cantidad: ").append(existencias).append("\n");
         }
         return sb.toString();
     }
