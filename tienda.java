@@ -1,4 +1,9 @@
-
+/**
+ * @author Julio García Salas
+ * Tare: Hoja de trabajo 6
+ * Archivo: tienda.java
+ * Fecha: 06/03/2023
+ */
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -8,12 +13,24 @@ import java.util.Map;
 public class tienda {
     public tienda()
     {}
+    /**
+    Este método agrega un producto al carrito de compras.
+    @param carrito Un objeto Map que representa el carrito de compras.
+    @param producto Un String que representa el nombre del producto a agregar.
+    @param categoria Un String que representa la categoría del producto a agregar.
+    @param cantidad Un int que representa la cantidad del producto a agregar.
+    **/
     public void addCarrito(Map<Integer, Producto> carrito, String producto, String categoria, int cantidad)
     {
         int indice = carrito.size() +1;
         Producto Producto = new Producto(producto, categoria, cantidad);
         carrito.put(indice, Producto);
     }
+    /**
+    Este método ordena los productos en el inventario por categoría y luego los muestra en un String.
+    @param productos Un objeto Map que representa el inventario de la tienda.
+    @return Un String que contiene los productos ordenados por categoría.
+    */
     public String productosOrdPorCategoria(Map<Integer, Producto> productos) {
         Map<String, List<Producto>> productosPorCategoria = new HashMap<>();
         for (Producto producto : productos.values()) {
@@ -36,6 +53,12 @@ public class tienda {
         }
         return resultado;
     }
+    /**
+    Este método busca la categoría de un producto en el inventario y lo muestra en un String.
+    @param productos Un objeto Map que representa el inventario de la tienda.
+    @param nombreProducto Un String que representa el nombre del producto a buscar.
+    @return Un String que contiene la categoría del producto buscado, o un mensaje de error si el producto no se encuentra.
+    */
     public String buscarCategoriaProducto(Map<Integer, Producto> productos, String nombreProducto) {
         for (Producto producto : productos.values()) {
             if (producto.getNombre().equals(nombreProducto)) {
@@ -44,6 +67,11 @@ public class tienda {
         }
         return String.format("No se encontró el producto con nombre '%s'", nombreProducto);
     }
+    /**
+    Este método muestra los productos en el inventario en un String, sin ordenarlos.
+    @param productos Un objeto Map que representa el inventario de la tienda.
+    @return Un String que contiene los productos sin ordenar.
+    */
     public String produtosSinSort(Map<Integer, Producto> productos) {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<Integer, Producto> producto : productos.entrySet()) {

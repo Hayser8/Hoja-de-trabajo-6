@@ -1,8 +1,8 @@
 /**
- * @author Sofia Garcia
- * Folder: HDT6
- * Archivo: Read.java
- * Fecha: 05/03/2023
+ * @author Julio García Salas
+ * Tare: Hoja de trabajo 6
+ * Archivo: readersito.java
+ * Fecha: 06/03/2023
  */
 
  import java.io.File;

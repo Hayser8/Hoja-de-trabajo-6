@@ -1,3 +1,9 @@
+/**
+ * @author Julio García Salas
+ * Tare: Hoja de trabajo 6
+ * Archivo: controlador.java
+ * Fecha: 06/03/2023
+ */
 import java.util.Map;
 import java.util.Scanner;
 
